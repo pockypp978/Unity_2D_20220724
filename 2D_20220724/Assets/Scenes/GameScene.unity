@@ -15034,8 +15034,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Carcc: 1997
   weight: 4.8763
-  brand: "\u9583\u8000\u9B54\u773C"
-  HasInsurance: 0
+  brand: 
+  HasInsurance: 1
+  Camera: {fileID: 362669284}
+  colorblack: {r: 0, g: 0, b: 0, a: 0}
+  ColorRed: {r: 1, g: 0, b: 0, a: 1}
+  ColorGreen: {r: 0, g: 1, b: 0, a: 1}
+  ColorCustom01: {r: 0.8, g: 0.4, b: 0.2, a: 1}
+  ColorCustom02: {r: 0.7075472, g: 0.18356179, b: 0.18356179, a: 0}
+  ColorCustom03: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  V2Right: {x: 1, y: 0}
+  V2Left: {x: -1, y: 0}
+  V2Up: {x: 0, y: 1}
+  V2Down: {x: 0, y: -1}
+  V2Custom: {x: 7, y: 7}
+  Layer:
+    serializedVersion: 2
+    m_Bits: 0
+  KeyA: 97
+  KeyJump: 32
+  KeyCustom: 0
+  LightType: 0
+  Transform: {fileID: 1767365338}
+  Rigidbody: {fileID: 1767365340}
+  Animator: {fileID: 1767365336}
 --- !u!4 &561826375
 Transform:
   m_ObjectHideFlags: 0
