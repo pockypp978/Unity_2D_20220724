@@ -16,10 +16,15 @@ namespace LP
         #region 方法
         private void Move()
         {
-           float h = Input.GetAxis("Horizontal");
+            float h = Input.GetAxis("Horizontal");
             print("水平方向按鍵值" + h);
             Rigidbody.velocity = new Vector2(h * Speed, Rigidbody.velocity.y);
             Animator.SetBool(MoveAnimatoin, h != 0);
+
+            if (Mathf.Abs(h) < 0.1f) { return; };
+
+            float yangle = h > 0 ? 0 : 180;
+            transform.eulerAngles = new Vector3(0, yangle, 0);
         }
         #endregion
         #region 事件
