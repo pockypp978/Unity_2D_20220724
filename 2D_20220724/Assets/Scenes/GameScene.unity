@@ -15206,7 +15206,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7785016, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -17548,6 +17548,7 @@ GameObject:
   - component: {fileID: 1767365340}
   - component: {fileID: 1767365339}
   - component: {fileID: 1767365341}
+  - component: {fileID: 1767365342}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -17693,6 +17694,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 10
   MoveAnimatoin: "\u8DD1\u6B65\u958B\u95DC"
+--- !u!114 &1767365342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767365335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 490e610f963a96248a23f1c369a8eb09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jump: 5
+  jumpbool: "\u8DF3\u8E8D\u958B\u95DC"
+  checkGroundColor: {r: 1, g: 0, b: 0.2, a: 0.3}
+  checkGroundSide: {x: 0.5, y: 0.5, z: 0}
+  checkGroundOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &2082379629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6619103437927450628, guid: cd1a1b028598be0429f846741a3f3f94, type: 3}
