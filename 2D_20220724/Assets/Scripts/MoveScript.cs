@@ -16,19 +16,23 @@ namespace LP
         #region 方法
         private void Move()
         {
-
+           float h = Input.GetAxis("Horizontal");
+            print("水平方向按鍵值" + h);
+            Rigidbody.velocity = new Vector2(h * Speed, Rigidbody.velocity.y);
+            Animator.SetBool(MoveAnimatoin, h != 0);
         }
         #endregion
         #region 事件
 
         private void Awake()
         {
-
+            Animator = GetComponent<Animator>();
+            Rigidbody = GetComponent<Rigidbody2D>();
         }
 
         private void Update()
         {
-
+            Move();
         }
         #endregion
     }

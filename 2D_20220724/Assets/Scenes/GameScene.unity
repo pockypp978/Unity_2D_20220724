@@ -15141,7 +15141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &707302638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15159,6 +15159,7 @@ MonoBehaviour:
   sphere: {fileID: 1674230971}
   capsuleSize: {fileID: 1657179364}
   cubeRotate: {fileID: 1584220737}
+  sphereRotate: {fileID: 0}
   capsuleRig: {fileID: 0}
 --- !u!4 &707302639
 Transform:
