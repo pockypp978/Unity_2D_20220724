@@ -17,7 +17,6 @@ namespace LP
         private void Move()
         {
             float h = Input.GetAxis("Horizontal");
-            print("水平方向按鍵值" + h);
             Rigidbody.velocity = new Vector2(h * Speed, Rigidbody.velocity.y);
             Animator.SetBool(MoveAnimatoin, h != 0);
 
