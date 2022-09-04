@@ -9,6 +9,8 @@ namespace LP
 		public string NPCName;
 		[Header("對話內容"),TextArea(3,10)]
 		public string[] contents;
+		[Header("攝影機名稱")]
+		public string nameCamera;
 	}
 }
 

@@ -10,9 +10,14 @@ namespace LP
         /// </summary>
 
         #region 公開資料
+        [SerializeField,Header("開始對話按鍵")]
         private KeyCode keyStartContent = KeyCode.E;
+        [SerializeField, Header("NPC資料")]
+        public NPCData NPCData;
         private bool isArea;
         private bool isTalk;
+
+        private TalkSystem talkSystem;
         #endregion
         #region 要停止的元件
         private MoveScript moveScript;
@@ -27,6 +32,7 @@ namespace LP
             grouptip = GameObject.Find("提示畫布").GetComponent<CanvasGroup>();
             moveScript = FindObjectOfType<MoveScript>();
             jumpSystem = FindObjectOfType<JumpSystem>();
+            talkSystem = FindObjectOfType<TalkSystem>();
         }
 
         private void Update()
@@ -45,6 +51,7 @@ namespace LP
 
                 StopAllCoroutines();
                 StartCoroutine(fadeGroup(false));
+                talkSystem.StartTalk();
             }
         }
 
