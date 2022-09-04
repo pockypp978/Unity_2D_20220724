@@ -38,6 +38,12 @@ namespace LP
         {
             Move();
         }
+
+        private void OnDisable()
+        {
+            Rigidbody.velocity = Vector2.zero;
+            Animator.SetBool(MoveAnimatoin, false);
+        }
         #endregion
     }
 }
