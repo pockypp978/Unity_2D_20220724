@@ -10028,6 +10028,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goTriangle: {fileID: 1036819079}
+  intervalTypeEffect: 0.05
+  keyDialogue: 101
 --- !u!4 &267605499
 Transform:
   m_ObjectHideFlags: 0
@@ -15376,7 +15378,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7791305, y: 1}
+    m_SensorSize: {x: 1.1661202, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -15757,6 +15759,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 903830056910028086, guid: d4cf748e28207f24ca127ac6dd9214f1, type: 3}
   m_PrefabInstance: {fileID: 817106191}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &856503864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 856503866}
+  - component: {fileID: 856503865}
+  m_Layer: 0
+  m_Name: "\u59D4\u6D3E\u63A5\u6536"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &856503865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856503864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7a26ccf142e6147a348fbf42631917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &856503866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856503864}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &895618268
 GameObject:
   m_ObjectHideFlags: 0
@@ -17219,6 +17265,50 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!1 &1103494549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1103494551}
+  - component: {fileID: 1103494550}
+  m_Layer: 0
+  m_Name: "\u59D4\u6D3E\u50B3\u9001"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1103494550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103494549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aee80024a67ace42b976787fd3ebb35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1103494551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103494549}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1139780085
 GameObject:
   m_ObjectHideFlags: 3
@@ -17903,7 +17993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyStartContent: 101
-  NPCData: {fileID: 0}
+  NPCData: {fileID: 11400000, guid: 2d7b91bf7c1ed344bab798f89e920891, type: 2}
 --- !u!61 &1337367235
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18721,7 +18811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1959887090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18738,7 +18828,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 9
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 1337367233}
   m_Follow: {fileID: 0}
@@ -18751,7 +18841,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7772152, y: 1}
+    m_SensorSize: {x: 1.1661202, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

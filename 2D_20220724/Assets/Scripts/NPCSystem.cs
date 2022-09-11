@@ -59,7 +59,7 @@ namespace LP
 
                 StopAllCoroutines();
                 StartCoroutine(fadeGroup(false));
-                StartCoroutine(talkSystem.StartTalk(NPCData));
+                StartCoroutine(talkSystem.StartTalk(NPCData,DialogueEND));
             }
         }
 
@@ -102,6 +102,7 @@ namespace LP
             moveScript.enabled = true;
             jumpSystem.enabled = true;
             cvcCM.Priority = 9;
+            //StartCoroutine(fadeGroup(true));
         }
     }
 }

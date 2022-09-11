@@ -22,9 +22,12 @@ public class TalkSystem : MonoBehaviour
     /// 當前NPC資料
     /// </summary>
     private NPCData nPCData;
+    public delegate void delegateDialogueEND();
+    private delegateDialogueEND diagueEND;
 
-    public IEnumerator StartTalk(NPCData _nPCData)
+    public IEnumerator StartTalk(NPCData _nPCData,delegateDialogueEND _END)
     {
+        diagueEND = _END;
         nPCData = _nPCData;                                         //將 NPC 傳過來的資料儲存
         nameNPC.text = nPCData.NPCName;                             //更新 NPC 名稱
         talkContext.text = "";                                      //清空 NPC 對話內容
@@ -72,8 +75,10 @@ public class TalkSystem : MonoBehaviour
                 yield return null;
 			}
 
-            StartCoroutine(fadeGroup(false));
+            
         }
+        StartCoroutine(fadeGroup(false));
+        diagueEND();
     }
 
 }
