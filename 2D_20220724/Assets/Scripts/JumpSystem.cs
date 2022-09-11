@@ -5,7 +5,7 @@ namespace LP
 	{
 		#region 資料
 		[SerializeField, Header("跳躍高度"), Range(0, 100)]
-		private float jump = 5;
+		private float jump = 6;
 		[SerializeField, Header("跳躍開關")]
 		private string jumpbool = ("跳躍開關");
 		private Rigidbody2D rig;
@@ -61,7 +61,7 @@ namespace LP
 		{
 			if (isground && Input.GetKeyDown(KeyCode.Space))
 			{
-				rig.AddForce(new Vector2(0, jump * 10));
+				rig.AddForce(new Vector2(0, jump * 15));
 			}
 		}
 		#endregion
