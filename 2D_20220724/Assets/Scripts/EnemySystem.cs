@@ -8,6 +8,8 @@ public class EnemySystem : MonoBehaviour
 
     private Rigidbody2D rig;
 
+
+
     private void Awake()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -22,6 +24,7 @@ public class EnemySystem : MonoBehaviour
     private void Update()
     {
         Wander();
+        CheckGroundForward();
     }
     /// <summary>
     /// 遊走功能
@@ -29,5 +32,15 @@ public class EnemySystem : MonoBehaviour
     private void Wander()
     {
         rig.velocity = new Vector2(-enemyData.speed, rig.velocity.y);
+    }
+    /// <summary>
+    /// 偵測前方是否有地板
+    /// </summary>
+    private void CheckGroundForward()
+    {
+        Collider2D hit = Physics2D.OverlapBox(
+            transform.position + enemyData.checkGroundOffset,
+            enemyData.checkGroundSize, 0, enemyData.checkGroundLayer);
+        print("前方碰撞物件" + hit.gameObject);
     }
 }
