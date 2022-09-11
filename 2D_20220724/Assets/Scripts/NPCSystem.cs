@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Cinemachine;
 
 namespace LP
 {
@@ -23,17 +24,23 @@ namespace LP
         private MoveScript moveScript;
         private JumpSystem jumpSystem;
         #endregion
+        /// <summary>
+        /// NPC CM 攝影機
+        /// </summary>
+        private CinemachineVirtualCamera cvcCM;
         #region 提示畫布
         private CanvasGroup grouptip;
         private string namePlayer = "Knight";
         
         private void Awake()
         {
+            cvcCM = GameObject.Find(NPCData.nameCamera).GetComponent<CinemachineVirtualCamera>();
             grouptip = GameObject.Find("提示畫布").GetComponent<CanvasGroup>();
             moveScript = FindObjectOfType<MoveScript>();
             jumpSystem = FindObjectOfType<JumpSystem>();
             talkSystem = FindObjectOfType<TalkSystem>();
         }
+        #endregion
 
         private void Update()
         {
@@ -48,10 +55,11 @@ namespace LP
                 isTalk = true;
                 moveScript.enabled = false;
                 jumpSystem.enabled = false;
+                cvcCM.Priority = 11;
 
                 StopAllCoroutines();
                 StartCoroutine(fadeGroup(false));
-                talkSystem.StartTalk();
+                StartCoroutine(talkSystem.StartTalk(NPCData));
             }
         }
 
@@ -85,7 +93,16 @@ namespace LP
                 yield return new WaitForSeconds(0.1f);
             }
         }
-        #endregion
+        /// <summary>
+        /// 對話結束後處理
+        /// </summary>
+        private void DialogueEND() 
+        {
+            isTalk = false;
+            moveScript.enabled = true;
+            jumpSystem.enabled = true;
+            cvcCM.Priority = 9;
+        }
     }
 }
 
