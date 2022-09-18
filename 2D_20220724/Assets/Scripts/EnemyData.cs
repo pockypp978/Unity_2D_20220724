@@ -14,6 +14,12 @@ namespace LP
         public Vector3 checkGroundOffset;
         public Vector3 checkGroundSize = Vector3.one;
         public LayerMask checkGroundLayer;
+
+        [Header("偵測前方是否有攻擊目標")]
+        public Color checkTargetColor = new Color(1, 0.5f, 0.3f, 0.3f);
+        public Vector3 checkTargetOffset;
+        public Vector3 checkTargetSize = Vector3.one;
+        public LayerMask checkTargetLayer;
     }
 
 }
