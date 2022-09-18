@@ -15380,7 +15380,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7783333, y: 1}
+    m_SensorSize: {x: 1.7783375, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -18474,6 +18474,7 @@ GameObject:
   - component: {fileID: 1767365339}
   - component: {fileID: 1767365341}
   - component: {fileID: 1767365342}
+  - component: {fileID: 1767365343}
   m_Layer: 6
   m_Name: Knight
   m_TagString: Untagged
@@ -18639,6 +18640,20 @@ MonoBehaviour:
   checkGroundColor: {r: 1, g: 0, b: 0.2, a: 0.3}
   checkGroundSize: {x: 0.5, y: 0.1, z: 0}
   checkGroundOffset: {x: 0, y: -1.383, z: 0}
+--- !u!114 &1767365343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767365335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8888f25d911774db55626db90f7c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackData: {fileID: 11400000, guid: 784425bf0ce0d7945b69ff89d4a9001a, type: 2}
+  keyAttack: 323
 --- !u!1 &1786873191
 GameObject:
   m_ObjectHideFlags: 0
@@ -18654,7 +18669,7 @@ GameObject:
   - component: {fileID: 1786873195}
   - component: {fileID: 1786873197}
   - component: {fileID: 1786873198}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u6B7B\u795E"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18798,6 +18813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 180d6a566526d2b4394f6462ae88579d, type: 2}
+  nameAnimationAttack: "\u6575\u4EBA_attack"
 --- !u!114 &1786873198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19015,7 +19031,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7783333, y: 1}
+    m_SensorSize: {x: 1.7783375, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

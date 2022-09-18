@@ -27,14 +27,15 @@ namespace LP
 			print("攻擊到" + hit);
 		}
 
-		private void Awake()
+		protected virtual void Awake()
 		{
 			ani = GetComponent<Animator>();
 		}
+		// virtual 虛擬：允許子類別使用複寫關鍵字 override
 		/// <summary>
 		/// 開始攻擊
 		/// </summary>
-		public void StartAttack() 
+		public virtual void StartAttack() 
 		{
 			if (isAttacking) return;
 
@@ -51,7 +52,13 @@ namespace LP
 			CheckAttackArea();
 			yield return new WaitForSeconds(attackData.attackTime);
 			isAttacking = false;
+			StopAttack();
 		}
+		//protected 保護級別：允許子類別存取或複寫
+		protected virtual void StopAttack()
+        {
+
+        }
 	}
 
 }

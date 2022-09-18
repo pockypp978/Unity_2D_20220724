@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Player Attack
   m_EditorClassIdentifier: 
   attack: 30
-  attackAreaColor: {r: 1, g: 0.2, b: 0.5, a: 0.3}
-  attackAreaSize: {x: 1, y: 1, z: 1}
-  attackAreaOffset: {x: 0, y: 0, z: 0}
+  attackAreaColor: {r: 0.8113208, g: 0.10332859, b: 0.1703794, a: 0.3}
+  attackAreaSize: {x: 1.8, y: 1.5, z: 1}
+  attackAreaOffset: {x: 0.8, y: -0.7, z: 0}
   attackAreaLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   parAttack: "\u653B\u64CA\u89F8\u767C"
-  attackTime: 1.5
-  delaySendDmage: 0.4
+  attackTime: 0.5
+  delaySendDmage: 0.2
