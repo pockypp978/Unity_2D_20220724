@@ -12,12 +12,17 @@ public class EnemySystem : MonoBehaviour
     private string parWalk = "走路開關";
     private bool lookAttackTarget;
     private Transform traAttackTarget;
+    private EnemyAttack enemyAttack;
+
+    [SerializeField, Header("動畫控制器攻擊動畫名稱")]
+    private string nameAnimationAttack = "敵人_attack";
 
 
     private void Awake()
     {
         rig = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
+        enemyAttack = GetComponent<EnemyAttack>();
     }
     private void OnDrawGizmos()
     {
@@ -78,6 +83,7 @@ public class EnemySystem : MonoBehaviour
         if (hit) traAttackTarget = hit.transform;//如果碰到物件就儲存變形元件
     }
 
+
     private void Flip()
     {
         if (!isGroundForward)
@@ -92,18 +98,26 @@ public class EnemySystem : MonoBehaviour
         if (lookAttackTarget) 
         {
             float dis = Vector3.Distance(transform.position, traAttackTarget.position);
-            //print("距離" + dis);
-            rig.velocity = Vector2.zero;
-            ani.SetBool(parWalk, false);
+            //如果 目前動畫名稱 為 敵人_atack 就跳出
+            if (ani.GetCurrentAnimatorStateInfo(0).IsName(nameAnimationAttack)) return;
+
             if (dis > enemyData.attackRange)
             {
                 rig.velocity = 2*transform.right * new Vector2(-enemyData.speed, rig.velocity.y);
             }
             else 
             {
-                rig.velocity = Vector2.zero;
+                Attack();
             }
             ani.SetBool(parWalk, rig.velocity.x != 0);
         }
+    }
+    /// <summary>
+    /// 攻擊
+    /// </summary>
+    private void Attack() 
+    {
+        rig.velocity = Vector2.zero;
+        enemyAttack.StartAttack();
     }
 }
