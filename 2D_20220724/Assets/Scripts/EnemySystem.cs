@@ -11,6 +11,7 @@ public class EnemySystem : MonoBehaviour
     private Animator ani;
     private string parWalk = "走路開關";
     private bool lookAttackTarget;
+    private Transform traAttackTarget;
 
 
     private void Awake()
@@ -28,6 +29,9 @@ public class EnemySystem : MonoBehaviour
         Gizmos.color = enemyData.checkTargetColor;
         Gizmos.DrawCube(transform.position + transform.TransformDirection(enemyData.checkTargetOffset), enemyData.checkTargetSize);
         #endregion
+
+        Gizmos.color = enemyData.attackRangeColor;
+        Gizmos.DrawLine(transform.position, transform.position + -transform.right * enemyData.attackRange);
 
     }
 
@@ -71,6 +75,7 @@ public class EnemySystem : MonoBehaviour
         //print("前方碰撞玩家" + hit.gameObject);
 
         lookAttackTarget = hit;
+        if (hit) traAttackTarget = hit.transform;//如果碰到物件就儲存變形元件
     }
 
     private void Flip()
@@ -86,8 +91,19 @@ public class EnemySystem : MonoBehaviour
     {
         if (lookAttackTarget) 
         {
+            float dis = Vector3.Distance(transform.position, traAttackTarget.position);
+            //print("距離" + dis);
             rig.velocity = Vector2.zero;
             ani.SetBool(parWalk, false);
+            if (dis > enemyData.attackRange)
+            {
+                rig.velocity = 2*transform.right * new Vector2(-enemyData.speed, rig.velocity.y);
+            }
+            else 
+            {
+                rig.velocity = Vector2.zero;
+            }
+            ani.SetBool(parWalk, rig.velocity.x != 0);
         }
     }
 }

@@ -5,7 +5,7 @@ namespace LP
     /// 敵人資料
     /// </summary>
     [CreateAssetMenu(menuName = "LP/Enemy Data", fileName = "Enemy Data", order = 1)]
-    public class EnemyData : ScriptableObject
+    public class EnemyData : AttackData
     {
         [Header("移動速度"), Range(0, 50)]
         public float speed = 3.5f;
@@ -20,6 +20,10 @@ namespace LP
         public Vector3 checkTargetOffset;
         public Vector3 checkTargetSize = Vector3.one;
         public LayerMask checkTargetLayer;
+        [Header("攻擊範圍")]
+        public Color attackRangeColor = new Color(1, 0.1f, 0.1f, 0.3f);
+        [Range(0, 5)]
+        public int attackRange = 2;
     }
 
 }

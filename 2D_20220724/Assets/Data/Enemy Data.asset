@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1998553b579fb94e817a5b77b6e717e, type: 3}
   m_Name: Enemy Data
   m_EditorClassIdentifier: 
+  attack: 30
+  attackAreaColor: {r: 0.8679245, g: 0.70822424, b: 0.118725546, a: 0.3}
+  attackAreaSize: {x: 1, y: 1, z: 1}
+  attackAreaOffset: {x: 0, y: 0, z: 0}
   speed: 2.2
   checkGroundColor: {r: 1, g: 0.5, b: 0.3, a: 0.3}
   checkGroundOffset: {x: -1.49, y: -1.34, z: 0}
@@ -20,8 +24,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   checkTargetColor: {r: 1, g: 0.023584902, b: 0.13120998, a: 0.3}
-  checkTargetOffset: {x: -2, y: 0, z: 0}
-  checkTargetSize: {x: 3.5, y: 2, z: 1}
+  checkTargetOffset: {x: -2.53, y: 0, z: 0}
+  checkTargetSize: {x: 5, y: 2, z: 1}
   checkTargetLayer:
     serializedVersion: 2
     m_Bits: 64
+  attackRangeColor: {r: 0.11901222, g: 1, b: 0.10196078, a: 0.3}
+  attackRange: 2
