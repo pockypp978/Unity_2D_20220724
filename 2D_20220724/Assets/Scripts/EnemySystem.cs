@@ -39,8 +39,11 @@ public class EnemySystem : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + -transform.right * enemyData.attackRange);
 
     }
-
-	private void Update()
+    private void OnDisable()
+    {
+        rig.velocity = Vector3.zero;
+    }
+    private void Update()
     {
         Wander();
         CheckGroundForward();

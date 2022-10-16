@@ -14,7 +14,7 @@ namespace LP
         [SerializeField,Header("開始對話按鍵")]
         private KeyCode keyStartContent = KeyCode.E;
         [SerializeField, Header("NPC資料")]
-        public NPCData NPCData;
+        public NPCData nPCData;
         private bool isArea;
         private bool isTalk;
 
@@ -23,6 +23,7 @@ namespace LP
         #region 要停止的元件
         private MoveScript moveScript;
         private JumpSystem jumpSystem;
+        private PlayerAttack playerAttack;
         #endregion
         /// <summary>
         /// NPC CM 攝影機
@@ -34,11 +35,12 @@ namespace LP
         
         private void Awake()
         {
-            cvcCM = GameObject.Find(NPCData.nameCamera).GetComponent<CinemachineVirtualCamera>();
+            cvcCM = GameObject.Find(nPCData.nameCamera).GetComponent<CinemachineVirtualCamera>();
             grouptip = GameObject.Find("提示畫布").GetComponent<CanvasGroup>();
             moveScript = FindObjectOfType<MoveScript>();
             jumpSystem = FindObjectOfType<JumpSystem>();
             talkSystem = FindObjectOfType<TalkSystem>();
+            playerAttack = FindObjectOfType<PlayerAttack>();
         }
         #endregion
 
@@ -55,11 +57,12 @@ namespace LP
                 isTalk = true;
                 moveScript.enabled = false;
                 jumpSystem.enabled = false;
+                playerAttack.enabled = false;
                 cvcCM.Priority = 11;
 
                 StopAllCoroutines();
                 StartCoroutine(fadeGroup(false));
-                StartCoroutine(talkSystem.StartTalk(NPCData,DialogueEND));
+                StartCoroutine(talkSystem.StartTalk(nPCData,DialogueEND));
             }
         }
 
@@ -101,6 +104,7 @@ namespace LP
             isTalk = false;
             moveScript.enabled = true;
             jumpSystem.enabled = true;
+            playerAttack.enabled = true;
             cvcCM.Priority = 9;
             //StartCoroutine(fadeGroup(true));
         }
