@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992461ab9ad37f142b16cfcef28dbbae, type: 3}
   m_Name: "NPC \u5C0F\u9B3C"
   m_EditorClassIdentifier: 
-  NPCName: "\u5C0F\u9B3C"
+  NPCName: Ghost
   contents:
   - HAHA Asshole
-  - "\u54ED\u963F\u53C8\u5438\u5976"
-  - "GG\u79C1\u5BC6\u9054\n55OOO4\u5594\u771F\u7684\u5047\u7684\n"
+  - I have a job for you
+  - SO? Take it or not?
   nameCamera: CM NPC

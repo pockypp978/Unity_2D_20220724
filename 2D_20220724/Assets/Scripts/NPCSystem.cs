@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Cinemachine;
 
 namespace LP
 {
@@ -13,7 +14,7 @@ namespace LP
         [SerializeField,Header("開始對話按鍵")]
         private KeyCode keyStartContent = KeyCode.E;
         [SerializeField, Header("NPC資料")]
-        public NPCData NPCData;
+        public NPCData nPCData;
         private bool isArea;
         private bool isTalk;
 
@@ -22,18 +23,26 @@ namespace LP
         #region 要停止的元件
         private MoveScript moveScript;
         private JumpSystem jumpSystem;
+        private PlayerAttack playerAttack;
         #endregion
+        /// <summary>
+        /// NPC CM 攝影機
+        /// </summary>
+        private CinemachineVirtualCamera cvcCM;
         #region 提示畫布
         private CanvasGroup grouptip;
         private string namePlayer = "Knight";
         
         private void Awake()
         {
+            cvcCM = GameObject.Find(nPCData.nameCamera).GetComponent<CinemachineVirtualCamera>();
             grouptip = GameObject.Find("提示畫布").GetComponent<CanvasGroup>();
             moveScript = FindObjectOfType<MoveScript>();
             jumpSystem = FindObjectOfType<JumpSystem>();
             talkSystem = FindObjectOfType<TalkSystem>();
+            playerAttack = FindObjectOfType<PlayerAttack>();
         }
+        #endregion
 
         private void Update()
         {
@@ -48,10 +57,12 @@ namespace LP
                 isTalk = true;
                 moveScript.enabled = false;
                 jumpSystem.enabled = false;
+                playerAttack.enabled = false;
+                cvcCM.Priority = 11;
 
                 StopAllCoroutines();
                 StartCoroutine(fadeGroup(false));
-                talkSystem.StartTalk();
+                StartCoroutine(talkSystem.StartTalk(nPCData,DialogueEND));
             }
         }
 
@@ -85,7 +96,18 @@ namespace LP
                 yield return new WaitForSeconds(0.1f);
             }
         }
-        #endregion
+        /// <summary>
+        /// 對話結束後處理
+        /// </summary>
+        private void DialogueEND() 
+        {
+            isTalk = false;
+            moveScript.enabled = true;
+            jumpSystem.enabled = true;
+            playerAttack.enabled = true;
+            cvcCM.Priority = 9;
+            //StartCoroutine(fadeGroup(true));
+        }
     }
 }
 

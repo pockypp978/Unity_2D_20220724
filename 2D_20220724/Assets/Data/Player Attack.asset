@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482c5de570d89d24995f03c378d65ad2, type: 3}
+  m_Name: Player Attack
+  m_EditorClassIdentifier: 
+  attack: 30
+  attackAreaColor: {r: 0.8113208, g: 0.10332859, b: 0.1703794, a: 0.3}
+  attackAreaSize: {x: 1.8, y: 1.5, z: 1}
+  attackAreaOffset: {x: 0.8, y: -0.7, z: 0}
+  attackAreaLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  parAttack: "\u653B\u64CA\u89F8\u767C"
+  attackTime: 0.5
+  delaySendDmage: 0.2
