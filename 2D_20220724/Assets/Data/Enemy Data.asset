@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1998553b579fb94e817a5b77b6e717e, type: 3}
   m_Name: Enemy Data
   m_EditorClassIdentifier: 
-  attack: 30
+  attack: 0
   attackAreaColor: {r: 0.05702039, g: 1, b: 0.023584902, a: 0.3}
   attackAreaSize: {x: 5, y: 3, z: 1}
   attackAreaOffset: {x: -2.5, y: 0, z: 0}

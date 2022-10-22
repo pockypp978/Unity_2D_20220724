@@ -20,6 +20,7 @@ namespace LP
 
 		protected virtual void Awake()
 		{
+			ani = GetComponent<Animator>();
 			hp = dataHealth.hp;
 			hpMax = hp;
 		}
@@ -45,7 +46,16 @@ namespace LP
 				behavioursToClose[i].enabled = false;
             }
 		}
-	}
+
+        protected virtual void OnEnable()
+        {
+			hp = dataHealth.hp;
+			for (int i = 0; i < behavioursToClose.Length; i++)
+			{
+				behavioursToClose[i].enabled = true;
+			}
+		}
+    }
 
 	
 

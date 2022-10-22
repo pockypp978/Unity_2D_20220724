@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de7930dbec243448bbcc03a28b716eb, type: 3}
   m_Name: "Health \u9A0E\u58EB"
   m_EditorClassIdentifier: 
-  hp: 0
+  hp: 30
   parDead: "\u6B7B\u4EA1\u958B\u95DC"

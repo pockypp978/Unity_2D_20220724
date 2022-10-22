@@ -20,7 +20,12 @@ namespace LP
 				attackData.attackAreaSize);
 		}
 
-		private void CheckAttackArea()
+        private void OnEnable()
+        {
+			isAttacking = false;
+        }
+
+        private void CheckAttackArea()
 		{
 			Collider2D hit = Physics2D.OverlapBox(
 				transform.position +

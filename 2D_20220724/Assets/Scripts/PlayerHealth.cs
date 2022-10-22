@@ -10,6 +10,7 @@ namespace LP
         protected override void Dead()
         {
             base.Dead();
+
             gameObject.layer = 8;
         }
     }
